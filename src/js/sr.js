@@ -1,4 +1,6 @@
 import assignProps from './assignProps';
+import de from '../de'
+
 export default function() {
   const defaultProps = {
     easing: 'cubic-bezier(0.5, 0, 0, 1)',
@@ -7,6 +9,23 @@ export default function() {
     desktop: true,
     mobile: true
   };
+
+  function translation(e){
+    const greeting = document.querySelector("#greeting")
+    const titleHeader = document.querySelector("#hero-name")
+    greeting.textContent = e.greeting
+    
+    titleHeader.textContent = e.name
+    
+    // greeting.textContent = e.greeting
+    
+  }
+    const translate = navigator.language
+    console.log(translate)
+    if(translate ==="de-DE"){console.log("true"), translation(de)}
+    
+   
+  
   
   /* Section Title */
   ScrollReveal().reveal('.section-title', 
